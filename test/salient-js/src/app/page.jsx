@@ -1,3 +1,4 @@
+'use client'
 import { CallToAction } from '@/components/CallToAction'
 import { Faqs } from '@/components/Faqs'
 import { Footer } from '@/components/Footer'

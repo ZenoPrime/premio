@@ -1,6 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react/jsx-no-comment-textnodes */
+'use client';
 import Image from 'next/image'
 
-import { Button } from '@/components/Button'
+/* import { Button } from '@/components/Button'*/
+import { Carousel, Typography, Button } from "@material-tailwind/react"
 import { Container } from '@/components/Container'
 import logoLaravel from '@/images/logos/laravel.svg'
 import logoMirage from '@/images/logos/mirage.svg'
@@ -11,8 +15,55 @@ import logoTuple from '@/images/logos/tuple.svg'
 
 export function Hero() {
   return (
-    <Container className="pb-16 pt-20 text-center lg:pt-32">
-      <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
+    <Container className="pb-12 pt-6 text-center lg:pt-12">
+      <Carousel className="rounded-xl h-96">
+      <div className="relative h-full w-full">
+        <img
+          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+          alt="image 1"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 grid h-full w-full place-items-left bg-black/20">
+          <div className="absolute pl-6 top">
+            <div className="w-3/4 text-left md:w-2/4">
+              <Typography
+                variant="h1"
+                color="white"
+                className="mb-4 text-2xl md:text-4xl lg:text-5xl"
+              >
+                The Beauty of Nature
+              </Typography>
+                <Typography
+                variant="lead"
+                color="white"
+                className="mb-12 opacity-80 text-justify"
+              >
+                It is not so much for its beauty that the forest makes a claim
+                upon men&apos;s hearts, as for that subtle something, that quality
+                of air that emanation from old trees, that so wonderfully changes
+                and renews a weary spirit.
+              </Typography>
+              <div className="flex justify-left gap-2">
+                <Button size="lg" color="white">
+                  Explore
+                </Button>
+                <Button size="lg" color="white" variant="text">
+                  Gallery
+                </Button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </Carousel>
+    </Container>
+  )
+}
+
+/*
+<h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
         Accounting{' '}
         <span className="relative whitespace-nowrap text-blue-600">
           <svg
@@ -81,6 +132,4 @@ export function Hero() {
           ))}
         </ul>
       </div>
-    </Container>
-  )
-}
+*/ 
