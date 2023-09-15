@@ -1,135 +1,140 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable react/jsx-no-comment-textnodes */
-'use client';
-import Image from 'next/image'
+'use client'
 
-/* import { Button } from '@/components/Button'*/
-import { Carousel, Typography, Button } from "@material-tailwind/react"
+import { Fragment } from 'react'
+import Link from 'next/link'
+import { Popover, Transition } from '@headlessui/react'
+import clsx from 'clsx'
+
+import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import logoLaravel from '@/images/logos/laravel.svg'
-import logoMirage from '@/images/logos/mirage.svg'
-import logoStatamic from '@/images/logos/statamic.svg'
-import logoStaticKit from '@/images/logos/statickit.svg'
-import logoTransistor from '@/images/logos/transistor.svg'
-import logoTuple from '@/images/logos/tuple.svg'
+import { Logo } from '@/components/Logo'
+import { NavLink } from '@/components/NavLink'
 
-export function Hero() {
+function MobileNavLink({ href, children }) {
   return (
-    <Container className="pb-12 pt-6 text-center lg:pt-12">
-      <Carousel className="rounded-xl h-96">
-      <div className="relative h-full w-full">
-        <img
-          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-          alt="image 1"
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 grid h-full w-full place-items-left bg-black/20">
-          <div className="absolute pl-6 top">
-            <div className="w-3/4 text-left md:w-2/4">
-              <Typography
-                variant="h1"
-                color="white"
-                className="mb-4 text-2xl md:text-4xl lg:text-5xl"
-              >
-                The Beauty of Nature
-              </Typography>
-                <Typography
-                variant="lead"
-                color="white"
-                className="mb-12 opacity-80 text-justify"
-              >
-                It is not so much for its beauty that the forest makes a claim
-                upon men&apos;s hearts, as for that subtle something, that quality
-                of air that emanation from old trees, that so wonderfully changes
-                and renews a weary spirit.
-              </Typography>
-              <div className="flex justify-left gap-2">
-                <Button size="lg" color="white">
-                  Explore
-                </Button>
-                <Button size="lg" color="white" variant="text">
-                  Gallery
-                </Button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </Carousel>
-    </Container>
+    <Popover.Button as={Link} href={href} className="block w-full p-2">
+      {children}
+    </Popover.Button>
   )
 }
 
-/*
-<h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
-        Accounting{' '}
-        <span className="relative whitespace-nowrap text-blue-600">
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 418 42"
-            className="absolute left-0 top-2/3 h-[0.58em] w-full fill-blue-300/70"
-            preserveAspectRatio="none"
-          >
-            <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z" />
-          </svg>
-          <span className="relative">made simple</span>
-        </span>{' '}
-        for small businesses.
-      </h1>
-      <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-        Most bookkeeping software is accurate, but hard to use. We make the
-        opposite trade-off, and hope you don’t get audited.
-      </p>
-      <div className="mt-10 flex justify-center gap-x-6">
-        <Button href="/register">Get 6 months free</Button>
-        <Button
-          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          variant="outline"
+function MobileNavIcon({ open }) {
+  return (
+    <svg
+      aria-hidden="true"
+      className="h-3.5 w-3.5 overflow-visible stroke-slate-700"
+      fill="none"
+      strokeWidth={2}
+      strokeLinecap="round"
+    >
+      <path
+        d="M0 1H14M0 7H14M0 13H14"
+        className={clsx(
+          'origin-center transition',
+          open && 'scale-90 opacity-0',
+        )}
+      />
+      <path
+        d="M2 2L12 12M12 2L2 12"
+        className={clsx(
+          'origin-center transition',
+          !open && 'scale-90 opacity-0',
+        )}
+      />
+    </svg>
+  )
+}
+
+function MobileNavigation() {
+  return (
+    <Popover>
+      <Popover.Button
+        className="relative z-10 flex h-8 w-8 items-center justify-center ui-not-focus-visible:outline-none"
+        aria-label="Toggle Navigation"
+      >
+        {({ open }) => <MobileNavIcon open={open} />}
+      </Popover.Button>
+      <Transition.Root>
+        <Transition.Child
+          as={Fragment}
+          enter="duration-150 ease-out"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="duration-150 ease-in"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
         >
-          <svg
-            aria-hidden="true"
-            className="h-3 w-3 flex-none fill-blue-600 group-active:fill-current"
-          >
-            <path d="m9.997 6.91-7.583 3.447A1 1 0 0 1 1 9.447V2.553a1 1 0 0 1 1.414-.91L9.997 5.09c.782.355.782 1.465 0 1.82Z" />
-          </svg>
-          <span className="ml-3">Watch video</span>
-        </Button>
-      </div>
-      <div className="mt-36 lg:mt-44">
-        <p className="font-display text-base text-slate-900">
-          Trusted by these six companies so far
-        </p>
-        <ul
-          role="list"
-          className="mt-8 flex items-center justify-center gap-x-8 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-12 xl:gap-y-0"
+          <Popover.Overlay className="fixed inset-0 bg-slate-300/50" />
+        </Transition.Child>
+        <Transition.Child
+          as={Fragment}
+          enter="duration-150 ease-out"
+          enterFrom="opacity-0 scale-95"
+          enterTo="opacity-100 scale-100"
+          leave="duration-100 ease-in"
+          leaveFrom="opacity-100 scale-100"
+          leaveTo="opacity-0 scale-95"
         >
-          {[
-            [
-              { name: 'Transistor', logo: logoTransistor },
-              { name: 'Tuple', logo: logoTuple },
-              { name: 'StaticKit', logo: logoStaticKit },
-            ],
-            [
-              { name: 'Mirage', logo: logoMirage },
-              { name: 'Laravel', logo: logoLaravel },
-              { name: 'Statamic', logo: logoStatamic },
-            ],
-          ].map((group, groupIndex) => (
-            <li key={groupIndex}>
-              <ul
-                role="list"
-                className="flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-12 sm:gap-y-0"
-              >
-                {group.map((company) => (
-                  <li key={company.name} className="flex">
-                    <Image src={company.logo} alt={company.name} unoptimized />
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
+          <Popover.Panel
+            as="div"
+            className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
+          >
+            <MobileNavLink href="#features">Features</MobileNavLink>
+            <MobileNavLink href="#testimonials">Testimonials</MobileNavLink>
+            <MobileNavLink href="#pricing">Pricing</MobileNavLink>
+            <hr className="m-2 border-slate-300/40" />
+            <MobileNavLink href="/login">Sign in</MobileNavLink>
+          </Popover.Panel>
+        </Transition.Child>
+      </Transition.Root>
+    </Popover>
+  )
+}
+
+export function Header() {
+  return (
+    <header className="py-10">
+      <Container>
+        <nav className="relative z-50 flex justify-between">
+          <div className="flex items-center md:gap-x-12">
+            <div className="hidden md:flex md:gap-x-6">
+              <NavLink href="#features">Featured</NavLink>
+              <NavLink href="#testimonials">Rewards</NavLink>
+              <NavLink href="#pricing">My Brands</NavLink>
+            </div>
+          </div>
+          <div className="hidden md:flex center md:gap-x-6">
+              <Link href="#" aria-label="Home">
+                <Logo className="h-24 w-auto" />
+              </Link>
+            </div>
+          <div className="flex items-center gap-x-5 md:gap-x-8">
+            <div className="hidden md:block">
+            <div class="pt-2 relative mx-auto text-gray-600">
+        <input class="border-2 border-gray-300 bg-white h-10 w-56 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+          type="search" name="search" placeholder="Search"/>
+        <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
+        <svg className="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+            viewBox="0 0 56.966 56.966" style={{ enableBackground: "new 0 0 56.966 56.966" }} xmlSpace="preserve"
+            width="512px" height="512px">
+            <path
+              d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+          </svg>
+        </button>
       </div>
-*/ 
+            </div>
+              <Button href="/register" color="blue">
+                <span>
+                  Sign Up
+                </span>
+              </Button>
+            <div className="-mr-1 md:hidden">
+              <MobileNavigation />
+            </div>
+          </div> 
+        </nav>
+      </Container>
+    </header>
+  )
+}
