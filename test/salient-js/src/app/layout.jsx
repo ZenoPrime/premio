@@ -5,11 +5,11 @@ import '@/styles/tailwind.css'
 
 export const metadata = {
   title: {
-    template: '%s - TaxPal',
-    default: 'TaxPal - Accounting made simple for small businesses',
+    template: '%s - Premio',
+    default: 'Premio - Unlock Rewards, Embrace Loyalty',
   },
   description:
-    'Most bookkeeping software is accurate, but hard to use. We make the opposite trade-off, and hope you don’t get audited.',
+    'Celebrate loyalty like never before with our app. Discover exclusive rewards from your favorite brands, while brands effortlessly manage their loyalty programs for you.',
 }
 
 const inter = Inter({
