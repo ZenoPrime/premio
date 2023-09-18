@@ -69,10 +69,10 @@ export default function Register() {
           label="How did you hear about us?"
           name="referral_source"
         >
-          <option>AltaVista search</option>
-          <option>Super Bowl commercial</option>
-          <option>Our route 34 city bus ad</option>
-          <option>The “Never Use This” podcast</option>
+          <option>Youtube video</option>
+          <option>Brand referral</option>
+          <option>Social media</option>
+          <option>Billboards</option>
         </SelectField>
         <div className="col-span-full">
           <Button type="submit" variant="solid" color="blue" className="w-full">

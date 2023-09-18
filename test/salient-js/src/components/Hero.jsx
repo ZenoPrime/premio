@@ -1,10 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable react/jsx-no-comment-textnodes */
-'use client';
 import Image from 'next/image'
 
-/* import { Button } from '@/components/Button'*/
-import { Carousel, Typography, Button } from "@material-tailwind/react"
+import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import logoLaravel from '@/images/logos/laravel.svg'
 import logoMirage from '@/images/logos/mirage.svg'
@@ -12,124 +8,92 @@ import logoStatamic from '@/images/logos/statamic.svg'
 import logoStaticKit from '@/images/logos/statickit.svg'
 import logoTransistor from '@/images/logos/transistor.svg'
 import logoTuple from '@/images/logos/tuple.svg'
+import { ChevronRightIcon } from '@heroicons/react/20/solid'
 
 export function Hero() {
   return (
-    <Container className="pb-12 pt-6 text-center lg:pt-12">
-      <Carousel className="rounded-xl h-96">
-      <div className="relative h-full w-full">
-        <img
-          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-          alt="image 1"
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 grid h-full w-full place-items-left bg-black/20">
-          <div className="absolute pl-6 top">
-            <div className="w-3/4 text-left md:w-2/4">
-              <Typography
-                variant="h1"
-                color="white"
-                className="mb-4 text-2xl md:text-4xl lg:text-5xl"
-              >
-                The Beauty of Nature
-              </Typography>
-                <Typography
-                variant="lead"
-                color="white"
-                className="mb-12 opacity-80 text-justify"
-              >
-                It is not so much for its beauty that the forest makes a claim
-                upon men&apos;s hearts, as for that subtle something, that quality
-                of air that emanation from old trees, that so wonderfully changes
-                and renews a weary spirit.
-              </Typography>
-              <div className="flex justify-left gap-2">
-                <Button size="lg" color="white">
-                  Explore
-                </Button>
-                <Button size="lg" color="white" variant="text">
-                  Gallery
-                </Button>
+    
+      <div className="bg-white">
+      <div className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20">
+        <div className="mx-auto max-w-7xl pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-40">
+          <div className="px-6 lg:px-0 lg:pt-4">
+            <div className="mx-auto max-w-2xl">
+              <div className="max-w-lg">
+                <img
+                  className="h-20"
+                  src="./logo.svg"
+                  alt="Your Company"
+                />
+                <div className="mt-24 sm:mt-32 lg:mt-16">
+                  <a href="#" className="inline-flex space-x-6">
+                    <span className="rounded-full bg-indigo-600/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-600 ring-1 ring-inset ring-indigo-600/10">
+                      What's new
+                    </span>
+                    {/*<span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-600">
+                      <span>Just shipped v0.1.0</span>
+                      <ChevronRightIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                     </span> */}
+                  </a>
+                </div>
+                <h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                Your Loyalty, Your Rewards, Your Way
+                </h1>
+                <p className="mt-6 text-lg leading-8 text-gray-600">
+                Empowering Users and Brands Alike:
+                Subscribe, Engage, and Earn Rewards with Your Favorite Brands.
+                Plus, Effortlessly Manage Loyalty Programs as a Brand Partner.
+                </p>
+                <div className="mt-10 flex items-center gap-x-6">
+                  <a
+                    href="/register"
+                    className="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
+                    Get Started
+                  </a>
+                  <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                    Log in <span aria-hidden="true">→</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-
+          <div className="mt-20 sm:mt-24 md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 lg:w-screen">
+            <div
+              className="absolute inset-y-0 right-1/2 -z-10 -mr-10 w-[200%] skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 md:-mr-20 lg:-mr-36"
+              aria-hidden="true"
+            />
+            <div className="shadow-lg md:rounded-3xl">
+              <div className="bg-indigo-500 [clip-path:inset(0)] md:[clip-path:inset(0_round_theme(borderRadius.3xl))]">
+                <div
+                  className="absolute -inset-y-px left-1/2 -z-10 ml-10 w-[200%] skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white md:ml-20 lg:ml-36"
+                  aria-hidden="true"
+                />
+                <div className="relative px-6 pt-8 sm:pt-16 md:pl-16 md:pr-0">
+                  <div className="mx-auto max-w-2xl md:mx-0 md:max-w-none">
+                    <div className="w-screen overflow-hidden rounded-tl-xl bg-gray-900">
+                      <div className="flex bg-gray-800/40 ring-1 ring-white/5">
+                        <div className="-mb-px flex text-sm font-medium leading-6 text-gray-400">
+                          <div className="border-b border-r border-b-white/20 border-r-white/10 bg-white/5 px-4 py-2 text-white">
+                            NotificationSetting.jsx
+                          </div>
+                          <div className="border-r border-gray-600/10 px-4 py-2">App.jsx</div>
+                        </div>
+                      </div>
+                      <div className="px-6 pb-14 pt-6">{/* Your code example */}</div>
+                    </div>
+                  </div>
+                  <div
+                    className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/10 md:rounded-3xl"
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white sm:h-32" />
       </div>
-
-    </Carousel>
-    </Container>
+    </div>
+    
   )
 }
-
-/*
-<h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
-        Accounting{' '}
-        <span className="relative whitespace-nowrap text-blue-600">
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 418 42"
-            className="absolute left-0 top-2/3 h-[0.58em] w-full fill-blue-300/70"
-            preserveAspectRatio="none"
-          >
-            <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z" />
-          </svg>
-          <span className="relative">made simple</span>
-        </span>{' '}
-        for small businesses.
-      </h1>
-      <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-        Most bookkeeping software is accurate, but hard to use. We make the
-        opposite trade-off, and hope you don’t get audited.
-      </p>
-      <div className="mt-10 flex justify-center gap-x-6">
-        <Button href="/register">Get 6 months free</Button>
-        <Button
-          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          variant="outline"
-        >
-          <svg
-            aria-hidden="true"
-            className="h-3 w-3 flex-none fill-blue-600 group-active:fill-current"
-          >
-            <path d="m9.997 6.91-7.583 3.447A1 1 0 0 1 1 9.447V2.553a1 1 0 0 1 1.414-.91L9.997 5.09c.782.355.782 1.465 0 1.82Z" />
-          </svg>
-          <span className="ml-3">Watch video</span>
-        </Button>
-      </div>
-      <div className="mt-36 lg:mt-44">
-        <p className="font-display text-base text-slate-900">
-          Trusted by these six companies so far
-        </p>
-        <ul
-          role="list"
-          className="mt-8 flex items-center justify-center gap-x-8 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-12 xl:gap-y-0"
-        >
-          {[
-            [
-              { name: 'Transistor', logo: logoTransistor },
-              { name: 'Tuple', logo: logoTuple },
-              { name: 'StaticKit', logo: logoStaticKit },
-            ],
-            [
-              { name: 'Mirage', logo: logoMirage },
-              { name: 'Laravel', logo: logoLaravel },
-              { name: 'Statamic', logo: logoStatamic },
-            ],
-          ].map((group, groupIndex) => (
-            <li key={groupIndex}>
-              <ul
-                role="list"
-                className="flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-12 sm:gap-y-0"
-              >
-                {group.map((company) => (
-                  <li key={company.name} className="flex">
-                    <Image src={company.logo} alt={company.name} unoptimized />
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
-      </div>
-*/ 
