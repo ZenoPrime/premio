@@ -75,7 +75,7 @@ export default function Register() {
           <option>Billboards</option>
         </SelectField>
         <div className="col-span-full">
-          <Button type="submit" variant="solid" color="blue" className="w-full">
+          <Button href="/home" type="submit" variant="solid" color="blue" className="w-full">
             <span>
               Sign up <span aria-hidden="true">&rarr;</span>
             </span>

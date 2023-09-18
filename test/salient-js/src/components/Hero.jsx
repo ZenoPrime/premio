@@ -20,11 +20,11 @@ export function Hero() {
             <div className="mx-auto max-w-2xl">
               <div className="max-w-lg">
                 <img
-                  className="h-20"
+                  className="h-6"
                   src="./logo.svg"
                   alt="Your Company"
                 />
-                <div className="mt-24 sm:mt-32 lg:mt-16">
+                <div className="mt-20 sm:mt-24 lg:mt-12">
                   <a href="#" className="inline-flex space-x-6">
                     <span className="rounded-full bg-indigo-600/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-600 ring-1 ring-inset ring-indigo-600/10">
                       What's new
@@ -35,7 +35,7 @@ export function Hero() {
                      </span> */}
                   </a>
                 </div>
-                <h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                <h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 Your Loyalty, Your Rewards, Your Way
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -50,7 +50,7 @@ export function Hero() {
                   >
                     Get Started
                   </a>
-                  <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                  <a href="/login" className="text-sm font-semibold leading-6 text-gray-900">
                     Log in <span aria-hidden="true">→</span>
                   </a>
                 </div>
@@ -70,16 +70,10 @@ export function Hero() {
                 />
                 <div className="relative px-6 pt-8 sm:pt-16 md:pl-16 md:pr-0">
                   <div className="mx-auto max-w-2xl md:mx-0 md:max-w-none">
-                    <div className="w-screen overflow-hidden rounded-tl-xl bg-gray-900">
-                      <div className="flex bg-gray-800/40 ring-1 ring-white/5">
-                        <div className="-mb-px flex text-sm font-medium leading-6 text-gray-400">
-                          <div className="border-b border-r border-b-white/20 border-r-white/10 bg-white/5 px-4 py-2 text-white">
-                            NotificationSetting.jsx
-                          </div>
-                          <div className="border-r border-gray-600/10 px-4 py-2">App.jsx</div>
-                        </div>
+                    <div className="w-screen overflow-hidden rounded-tl-xl bg-gray-100">
+                      <div className="px-6 pb-14 pt-6">
+                        {/** Add Dashboard */}
                       </div>
-                      <div className="px-6 pb-14 pt-6">{/* Your code example */}</div>
                     </div>
                   </div>
                   <div
