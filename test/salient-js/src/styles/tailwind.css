@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .hover-transition {
+      @apply transition-colors duration-500 ease-out
+    }
+  }
+
 .FeaturedCarousel_carousel__cNB_z{
     max-width:1212px;
 }
