@@ -6,6 +6,7 @@ import Feed from "@/components/main/Feed";
 import Trends from "@/components/aside/trends";
 import Carousel from "@/components/Carousel";
 import { Fragment, useState } from 'react'
+import { Logo } from "@/components/Logo";
 import { Dialog, Transition } from '@headlessui/react'
 import {
   Bars3Icon,
@@ -20,17 +21,13 @@ import {
 import Aside from "@/components/aside";
 
 const navigation = [
-  { name: 'Feed', href: '#', icon: HomeIcon, current: true },
-  { name: 'Team', href: '#', icon: UsersIcon, current: false },
-  { name: 'Projects', href: '#', icon: FolderIcon, current: false },
-  { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-  { name: 'Documents', href: '#', icon: DocumentDuplicateIcon, current: false },
-  { name: 'Reports', href: '#', icon: ChartPieIcon, current: false },
+  { name: 'Home', href: '#', icon: HomeIcon, current: true },
+  { name: 'Events', href: '#', icon: CalendarIcon, current: false },
+  { name: 'Dashboard', href: './dashboard', icon: ChartPieIcon, current: false },
 ]
 const teams = [
-  { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },
-  { id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false },
-  { id: 3, name: 'Workcation', href: '#', initial: 'W', current: false },
+  { id: 1, name: 'Lemnos', href: '#', initial: 'L', current: false },
+  { id: 2, name: 'Add new brand', href: '/onboard', initial: '+', current: false }
 ]
 
 function classNames(...classes) {
@@ -97,11 +94,7 @@ export default function Home() {
                   {/* Sidebar component, swap this element with another sidebar if you like */}
                   <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-2">
                     <div className="flex h-16 shrink-0 items-center">
-                      <img
-                        className="h-8 w-auto"
-                        src="#Logo"
-                        alt="Your Company"
-                      />
+                    <Logo/>
                     </div>
                     <nav className="flex flex-1 flex-col">
                       <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -132,7 +125,7 @@ export default function Home() {
                           </ul>
                         </li>
                         <li>
-                          <div className="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
+                          <div className="text-xs font-semibold leading-6 text-gray-400">Your brands</div>
                           <ul role="list" className="-mx-2 mt-2 space-y-1">
                             {teams.map((team) => (
                               <li key={team.name}>
@@ -175,11 +168,7 @@ export default function Home() {
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
             <div className="flex h-16 shrink-0 items-center">
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt="Your Company"
-              />
+              <Logo/>
             </div>
             <nav className="flex flex-1 flex-col">
               <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -210,7 +199,7 @@ export default function Home() {
                   </ul>
                 </li>
                 <li>
-                  <div className="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
+                  <div className="text-xs font-semibold leading-6 text-gray-400">Your brands</div>
                   <ul role="list" className="-mx-2 mt-2 space-y-1">
                     {teams.map((team) => (
                       <li key={team.name}>
@@ -263,7 +252,7 @@ export default function Home() {
             <span className="sr-only">Open sidebar</span>
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
-          <div className="flex-1 text-sm font-semibold leading-6 text-gray-900">Feed</div>
+          <div className="flex-1 text-sm font-semibold leading-6 text-gray-900">Home</div>
           <a href="#">
             <span className="sr-only">Your profile</span>
             <img

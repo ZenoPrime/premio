@@ -4,7 +4,7 @@ const withMT = require("@material-tailwind/react/utils/withMT");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = withMT({
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ['node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}','./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
@@ -34,6 +34,10 @@ module.exports = withMT({
       },
     },
   },
-  plugins: [formsPlugin, headlessuiPlugin],
+  plugins: [
+    formsPlugin, 
+    headlessuiPlugin,
+  require('tailwind-scrollbar-hide', 'flowbite/plugin'),
+],
 }
 );

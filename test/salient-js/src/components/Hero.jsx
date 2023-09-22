@@ -1,5 +1,4 @@
 import Image from 'next/image'
-
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import logoLaravel from '@/images/logos/laravel.svg'
@@ -73,6 +72,7 @@ export function Hero() {
                     <div className="w-screen overflow-hidden rounded-tl-xl bg-gray-100">
                       <div className="px-6 pb-14 pt-6">
                         {/** Add Dashboard */}
+                        <img src='/demo.png'/>
                       </div>
                     </div>
                   </div>

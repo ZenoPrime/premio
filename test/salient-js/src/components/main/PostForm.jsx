@@ -1,5 +1,6 @@
 import Card from "../Card";
 import Avatar from "../Avatar";
+import "@/styles/tailwind.css";
 
 export default function PostForm() {
   return (
@@ -9,8 +10,8 @@ export default function PostForm() {
           <Avatar />
         </div>
         <textarea
-          className="grow p-3 h-14"
-          placeholder="What's on your mind, Dawid?"
+          className="grow p-3 h-14 border-none "
+          placeholder="What's on your mind, Kassim?"
         />
       </div>
       <div className="flex gap-5 items-center mt-2">

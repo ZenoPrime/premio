@@ -1,5 +1,5 @@
 import { DotsHorizontalIcon } from '@heroicons/react/outline'
-import { brand } from '@/schemas/trends';
+import { brand } from '@/data/brand';
 
 
 export default function Brand({ brand }){
